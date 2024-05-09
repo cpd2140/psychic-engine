@@ -281,6 +281,6 @@ plants.forEach((plant) => {
     const item = items.find(
       (item) => item.name.toLowerCase() === plantName
     );
-    modalImg.src = "images/" + item.name.toUpperCase() + "_large.jpg";
+    modalImg.src = "/psychic-engine/images/" + item.name.toUpperCase() + "_large.jpg";
   });
 });
