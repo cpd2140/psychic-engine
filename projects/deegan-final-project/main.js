@@ -281,6 +281,6 @@ plants.forEach((plant) => {
     const item = items.find(
       (item) => item.name.toLowerCase() === plantName
     );
-    modalImg.src = "images/" + item.name.toUpperCase().replaceAll(" ", "_") + "_large.jpg";
+    modalImg.src = "images/" + item.name.toUpperCase().replaceAll(" ", "_") + "_LARGE.jpg";
   });
 });
