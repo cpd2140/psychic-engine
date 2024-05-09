@@ -1,0 +1,9 @@
+html,
+body {
+    font-family: 'Inclusive Sans', sans-serif;
+    min-height: 100vh;
+    background-color: papayawhip;
+    padding: 20px;
+    border: 1px solid #000000;
+    color: #141414;
+}

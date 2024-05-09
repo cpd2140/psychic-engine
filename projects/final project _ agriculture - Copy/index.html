@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Raleway:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Josefin+Slab:wght@300&family=Raleway:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <html lang="en">
+
+    <head>
+        <br>
+        <br>
+        <br>
+        <p class="header-text">Grow Your Own Garden Starter Pack
+        </p>
+        <br>
+        <br>
+        <br>
+        <meta charset="UTF-8" />
+        <title>Filter Images</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+            }
+
+            .btn {
+                background-color: #6bcd6e;
+                border: none;
+                color: white;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                padding: 8px 16px;
+                text-decoration: none;
+                border-top-right-radius: 6px;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+            }
+
+            .btn:hover {
+                background-color: #3e8e41;
+            }
+
+            .btn.active {
+                background-color: #3e8e41;
+            }
+
+            #grid-container {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 1rem;
+                padding: 1rem;
+            }
+
+            .item {
+                background-color: #f1f1f1;
+                border: 1px solid #ccc;
+                padding: 1rem;
+                text-align: center;
+                border-style: ridge;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .item-img {
+                width: 100%;
+                height: 80%;
+                object-fit: cover;
+            }
+
+            .item h2 {
+                margin: 0;
+            }
+
+            .item figcaption {
+                margin: 0;
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+
+                    <button class="btn">All</button>
+                    <button class="btn">Purple</button>
+                    <button class="btn">Yellow</button>
+                    <button class="btn">Red</button>
+                    <button class="btn">Green</button>
+                    <button class="btn">Orange</button>
+                    <button class="btn">White</button>
+                    <button class="btn">BROWN?!</button>
+                    <div id="grid-container"></div>
+                    <br>
+                    <br>
+                    <script>
+                        // Generate images
+                        const items = [
+                            {
+                                name: "Apple",
+                                colors: ["red"],
+                            },
+                            {
+                                name: "Arugula",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Avocado",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Basil",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Bay Leaf",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Beets",
+                                colors: ["purple", "green"],
+                            },
+                            {
+                                name: "Bok Choy",
+                                colors: ["purple", "green"],
+                            },
+                            {
+                                name: "Fall Red Cabbage",
+                                colors: ["green", "red"],
+                            },
+                            {
+                                name: "Fava Beans",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Pole Beans",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Spring Cabbage",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Summer Cabbage",
+                                colors: ["green", "yellow"],
+                            },
+                            {
+                                name: "Carrots",
+                                colors: ["green", "orange"],
+                            },
+                            {
+                                name: "Bok Choy",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Celery",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Chamomile",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Cilantro",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Corn",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Eggplant",
+                                colors: ["green", "purple"],
+                            },
+                            {
+                                name: "Eucalyptus",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Flax",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Garlic",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "House Leek",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Leek",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Kale",
+                                colors: ["green", "purple"]
+                            },
+                            {
+                                name: "Lime",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Malabar Spinach",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Mango",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Musk Melon",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Mustard",
+                                colors: ["green", "yellow"],
+                            },
+                            {
+                                name: "Onion",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Orange",
+                                colors: ["green", "orange"],
+                            },
+                            {
+                                name: "Oregano",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Red Chili",
+                                colors: ["green", "red"],
+                            },
+                            {
+                                name: "Rhubarb",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Rutabaga",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Scallions",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Scallions",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Shallots",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Spinach",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Summer Squash",
+                                colors: ["green", "yellow"],
+                            },
+                            {
+                                name: "Sunflower",
+                                colors: ["green", "yellow"],
+                            },
+                            {
+                                name: "Sweet Potato",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Thyme",
+                                colors: ["green", "purple"],
+                            },
+                            {
+                                name: "Tomato",
+                                colors: ["green", "red"],
+                            },
+                            {
+                                name: "Turnip",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Watermelon",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Wheat",
+                                colors: ["green", "white"],
+                            },
+                            {
+                                name: "Winter Jasmine",
+                                colors: ["yellow"],
+                            },
+                            {
+                                name: "Winter Squash",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "Zucchini",
+                                colors: ["green"],
+                            },
+                            {
+                                name: "GRAHAM CRACKERS!!!",
+                                colors: ["brown?!"],
+                            },
+                        ];
+                        const container = document.querySelector("#grid-container");
+                        for (const item of items) {
+                            // Create figure
+                            const figure = document.createElement("figure");
+                            figure.classList.add("item");
+                            figure.setAttribute("data-filter", item.name.toLowerCase());
+                            // Create image
+                            const img = document.createElement("img");
+                            img.src = "images/" + item.name.toUpperCase() + ".jpg";
+                            img.alt = item.name;
+                            img.classList.add("item-img");
+                            figure.appendChild(img);
+                            // Create break
+                            const br = document.createElement("br");
+                            // Create heading
+                            const h2 = document.createElement("h2");
+                            h2.textContent = item;
+                            // Create figcaption
+                            const figCaption = document.createElement("figcaption");
+                            // Add elements to figure caption
+                            figCaption.appendChild(br);
+                            figCaption.appendChild(h2);
+                            h2.innerText = item.name;
+                            // Add figcaption to figure
+                            figure.appendChild(figCaption);
+                            // Add figure to container
+                            container.appendChild(figure);
+                        }
+                        // Filter images
+                        const buttons = document.querySelectorAll(".btn");
+                        const plants = document.querySelectorAll(".item");
+                        buttons.forEach(function (button) {
+                            button.addEventListener("click", (event) => {
+                                event.preventDefault();
+                                // Remove active class from all buttons
+                                buttons.forEach((button) => {
+                                    button.classList.remove("active");
+                                });
+                                // Add active class to clicked button
+                                button.classList.add("active");
+                                // Get data-filter attribute value of clicked button
+                                plants.forEach((plant) => {
+                                    const plantName = plant.getAttribute("data-filter");
+                                    const item = items.find((item) => item.name.toLowerCase() === plantName);
+                                    const clickedColor = button.textContent.toLowerCase();
+                                    const hasColor = item?.colors.includes(clickedColor);
+                                    if (hasColor || button.textContent.toLowerCase() === "all") {
+                                        plant.style.display = "block";
+                                    } else {
+                                        plant.style.display = "none";
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+    </body>
+
+    </html>
+    }
+    </script>
+</body>
+
+</html>
