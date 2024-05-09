@@ -213,7 +213,7 @@ for (const item of items) {
   figure.setAttribute("data-filter", item.name.toLowerCase());
   // Create image
   const img = document.createElement("img");
-  img.src = "images/" + item.name.toUpperCase() + ".jpg";
+  img.src = "images/" + item.name.toUpperCase().replaceAll(" ", "_") + ".jpg";
   img.alt = item.name;
   img.classList.add("item-img");
   figure.appendChild(img);
@@ -281,6 +281,6 @@ plants.forEach((plant) => {
     const item = items.find(
       (item) => item.name.toLowerCase() === plantName
     );
-    modalImg.src = "images/" + item.name.toUpperCase() + "_large.jpg";
+    modalImg.src = "images/" + item.name.toUpperCase().replaceAll(" ", "_") + "_large.jpg";
   });
 });
